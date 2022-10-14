@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class App {
@@ -68,7 +69,81 @@ public class App {
     }
 
     //todo Task 4
-    public void printRhombus(){
+    public void printRhombus() {
+        int h,numOfBlanks,numOfChars,cInt;
+        char c,aus;
+        Scanner input = new Scanner(System.in);
+        System.out.print("h: ");
+        h = input.nextInt();
+        System.out.print("c: ");
+        c = input.next().charAt(0);
+
+
+        if (h<0||h%2==0) System.out.println("Invalid number!");
+        else{
+
+
+            numOfBlanks=h/2;
+            numOfChars=0;
+
+            for (int row=0;row<(h/2)+1;row++)
+            {
+
+                for (int i=0;i<numOfBlanks;i++) System.out.print(' ');
+
+                for (int i=0;i<=numOfChars;i++)
+                {
+                    cInt = c;
+                    cInt = cInt-numOfChars+i;
+                    aus = (char) cInt;
+                    System.out.print(aus);
+                }
+                for (int i=0;i<numOfChars;i++)
+                {
+                    cInt = c;
+                    cInt = cInt-i-1;
+                    aus = (char) cInt;
+                    System.out.print(aus);
+                }
+                System.out.println();
+                numOfBlanks--;
+                numOfChars++;
+            }
+            numOfBlanks=1;
+            numOfChars=h/2-1;
+
+            for (int row=0;row<(h/2);row++)
+            {
+
+                for (int i=0;i<numOfBlanks;i++) System.out.print(' ');
+
+                for (int i=0;i<=numOfChars;i++)
+                {
+                    cInt = c;
+                    cInt = cInt-numOfChars+i;
+                    aus = (char) cInt;
+                    System.out.print(aus);
+                }
+                for (int i=0;i<numOfChars;i++)
+                {
+                    cInt = c;
+                    cInt = cInt-i-1;
+                    aus = (char) cInt;
+                    System.out.print(aus);
+                }
+                System.out.println();
+                numOfBlanks++;
+                numOfChars--;
+            }
+
+
+
+
+
+
+        }
+
+
         // input your solution here
     }
 
@@ -114,7 +189,6 @@ public class App {
 
         do
         {
-
 
             do {
                 out += ((num1 % 10) * (num1 % 10));
